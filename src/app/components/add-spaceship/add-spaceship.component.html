@@ -1,0 +1,42 @@
+<h1>Ajouter une planète</h1>
+
+<form #planetForm="ngForm" (ngSubmit)="submitSpaceship()" class="d-flex justify-content-center">
+<div class="form-group col-md-6">
+  <label for="id">Id du vaisseau</label>
+  <input type="number" class="form-control" id="id"  name="id" required [(ngModel)]="spaceship.id"  #id="ngModel">
+  <div [hidden]="id.valid"
+       class="alert alert-danger">
+    Veuillez saisir l'ID
+  </div>
+
+  <label for="nom">Nom du vaisseau</label>
+  <input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="spaceship.model" #nom="ngModel">
+  <div [hidden]="nom.valid"
+       class="alert alert-danger">
+    Nom invalide
+  </div>
+
+  <label for="photo">Photo du vaisseau</label>
+  <input type="text" class="form-control" id="photo" name="photo"  [(ngModel)]="spaceship.picture" #photo="ngModel">
+  <div [hidden]="photo.valid"
+       class="alert alert-danger">
+    Photo invalide
+  </div>
+
+  <label for="intelligent">Qui a construit ce modèle?</label>
+  <input type="text" class="form-control" id="intelligent" name="intelligent"  [(ngModel)]="spaceship.constructeur" #intelligent="ngModel">
+  <div [hidden]="intelligent.valid"
+       class="alert alert-danger">
+    Noms invalides
+  </div>
+
+  <label for="photo">Quelle est l'histoire de ce vaisseau</label>
+  <input type="text" class="form-control" id="photo" name="photo" [(ngModel)]="spaceship.story" #story="ngModel">
+  <div [hidden]="story.valid"
+       class="alert alert-danger">
+    Noms invalides
+  </div>
+  <button type="submit" class="btn btn-secondary">Soumettre</button>
+</div>
+  
+</form>

@@ -1,0 +1,43 @@
+<h1>Ajouter une planète</h1>
+
+<form #planetForm="ngForm" (ngSubmit)="submitPlanet()" class="d-flex justify-content-center">
+<div class="form-group col-md-6">
+  <label for="id">Id de la planète</label>
+  <input type="number" class="form-control" id="id"  name="id" required [(ngModel)]="planet.id"  #id="ngModel">
+  <div [hidden]="id.valid"
+       class="alert alert-danger">
+    Veuillez saisir l'ID
+  </div>
+
+  <label for="nom">Nom de la planète</label>
+  <input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="planet.name" #nom="ngModel">
+  <div [hidden]="nom.valid"
+       class="alert alert-danger">
+    Nom invalide
+  </div>
+
+  <label for="photo">Photo de la planète</label>
+  <input type="text" class="form-control" id="photo" name="photo"  [(ngModel)]="planet.picture" #photo="ngModel">
+  <div [hidden]="photo.valid"
+       class="alert alert-danger">
+    Photo invalide
+  </div>
+
+  <label for="intelligent">Quelles sont les espèces intelligentes recencées</label>
+  <input type="text" class="form-control" id="intelligent" name="intelligent"  [(ngModel)]="planet.intelligentSpecies" #intelligent="ngModel">
+  <div [hidden]="intelligent.valid"
+       class="alert alert-danger">
+    Noms invalides
+  </div>
+
+  <label for="photo">Quelle est l'histoire de cette planète</label>
+  <input type="text" class="form-control" id="photo" name="photo" [(ngModel)]="planet.story" #story="ngModel">
+  <div [hidden]="story.valid"
+       class="alert alert-danger">
+    Noms invalides
+  </div>
+  <button type="submit" class="btn btn-secondary">Soumettre</button>
+</div>
+  
+</form>
+

@@ -1,0 +1,17 @@
+<h1 class="display-1">Les planètes de Starwars</h1>
+<div class="container">
+<a routerLink="/planets/add" class="btn btn-secondary">Ajouter une planète</a>
+
+<div class="card-deck d-flex justify-content-center">
+  <div *ngFor="let planet of planets" class="card d-flex m-2 bg-secondary text-white" style="width: 18rem;">
+    <img src="assets/images/{{planet.picture}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{planet.name | uppercase}}</h5>
+      <p class="card-text">Espèces connues: {{planet.intelligentSpecies}}</p>
+      <a [routerLink]="['/planets', planet.id]" class="btn btn-outline-info">voir le détail</a>
+      <a class="btn btn-outline-danger m-2" (click)="planeteDelete(planet)">Supprimer</a>
+      <a [routerLink]="['/editplanets', planet.id]" class="btn btn-outline-success">Editer</a>
+    </div>
+  </div>
+</div>
+</div>
