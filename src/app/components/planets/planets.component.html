@@ -3,7 +3,7 @@
 <a routerLink="/planets/add" class="btn btn-secondary">Ajouter une planète</a>
 
 <div class="card-deck d-flex justify-content-center">
-  <div *ngFor="let planet of planets" class="card d-flex m-2 bg-secondary text-white" style="width: 18rem;">
+  <div *ngFor="let planet of planets" class="card d-flex m-2" style="width: 18rem;">
     <img src="assets/images/{{planet.picture}}" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{planet.name | uppercase}}</h5>

@@ -1,1 +1,37 @@
-<p>edit-spaceship works!</p>
+<h1>Editer</h1>
+
+<form #planetForm="ngForm" (ngSubmit)="editSpaceship()" class="d-flex justify-content-center">
+<div class="form-group col-md-6">
+  
+
+  <label for="nom">Nom du vaisseau</label>
+  <input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="spaceship.model" #nom="ngModel">
+  <div [hidden]="nom.valid"
+       class="alert alert-danger">
+    Nom invalide
+  </div>
+
+  <label for="photo">Photo du vaisseau</label>
+  <input type="text" class="form-control" id="photo" name="photo"  [(ngModel)]="spaceship.picture" #photo="ngModel">
+  <div [hidden]="photo.valid"
+       class="alert alert-danger">
+    Photo invalide
+  </div>
+
+  <label for="intelligent">Quel est le constructeur du vaisseau?</label>
+  <input type="text" class="form-control" id="intelligent" name="intelligent"  [(ngModel)]="spaceship.constructeur" #intelligent="ngModel">
+  <div [hidden]="intelligent.valid"
+       class="alert alert-danger">
+    Noms invalides
+  </div>
+
+  <label for="story">Quelle est l'histoire de ce vaisseau?</label>
+  <input type="text" class="form-control" id="story" name="story" [(ngModel)]="spaceship.story" #story="ngModel">
+  <div [hidden]="story.valid"
+       class="alert alert-danger">
+    Noms invalides
+  </div>
+  <button type="submit" class="btn btn-secondary">Modifier</button>
+</div>
+  
+</form>

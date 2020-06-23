@@ -6,14 +6,15 @@
 <a routerLink="/spaceships/add" class="btn btn-secondary">Ajouter un vaisseau</a>
 
   <div class="card-deck d-flex justify-content-center">
-    <div *ngFor="let spaceship of spaceships" class="card d-flex m-2 bg-secondary text-white" style="width: 18rem;">
+    <div *ngFor="let spaceship of spaceships" class="card d-flex m-2" style="width: 18rem;">
       <img src="assets/images/{{spaceship.picture}}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{spaceship.model | uppercase}}</h5>
         <p class="card-text">Constructeur: {{spaceship.constructeur}}</p>
         <p class="card-text">{{spaceship.speedOfLight? 'Il passe en vitesse lumière' : 'Il ne passe pas en vitesse lumière'}}</p>
         <a [routerLink]="['/spaceships', spaceship.id]" class="btn btn-outline-info">voir le détail</a>
-        <a class="btn btn-outline-danger m-4" (click)="spaceshipDelete(spaceship)">Supprimer</a>
+        <a class="btn btn-outline-danger m-2" (click)="spaceshipDelete(spaceship)">Supprimer</a>
+        <a [routerLink]="['/editspaceships', spaceship.id]" class="btn btn-outline-success">Editer</a>
       </div>
     </div>
   </div>

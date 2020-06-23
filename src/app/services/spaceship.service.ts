@@ -28,4 +28,8 @@ export class SpaceshipService {
     this.spaceshipTable = this.spaceshipTable.filter(spaceshipToDelete => spaceship !== spaceshipToDelete);
     return this.spaceshipTable;
   }
+  editSpaceship(spaceship: Spaceship): Spaceship [] {
+    this.spaceshipTable.filter(spaceshipToEdit => spaceship === spaceshipToEdit)[0] = spaceship;
+    return this.spaceshipTable;
+  }
 }

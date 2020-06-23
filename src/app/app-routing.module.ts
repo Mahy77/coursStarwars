@@ -8,6 +8,7 @@ import { SpaceshipDetailComponent } from './components/spaceship-detail/spaceshi
 import { AddSpaceshipComponent } from './components/add-spaceship/add-spaceship.component';
 import { AddPlanetComponent } from './components/add-planet/add-planet.component';
 import { EditPlanetComponent } from './components/edit-planet/edit-planet.component';
+import { EditSpaceshipComponent } from './components/edit-spaceship/edit-spaceship.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -18,7 +19,8 @@ const routes: Routes = [
  {path: 'spaceships/add',      component: AddSpaceshipComponent },
  { path: 'planets/:id', component: PlanetDetailComponent},
  { path: 'spaceships/:id', component: SpaceshipDetailComponent},
- { path: 'editplanets/:id', component :EditPlanetComponent}
+ { path: 'editplanets/:id', component :EditPlanetComponent},
+ { path: 'editspaceships/:id', component: EditSpaceshipComponent}
 ];
 
 @NgModule({

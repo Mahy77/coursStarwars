@@ -25,8 +25,8 @@
     Noms invalides
   </div>
 
-  <label for="photo">Quelle est l'histoire de cette planète</label>
-  <input type="text" class="form-control" id="photo" name="photo" [(ngModel)]="planet.story" #story="ngModel">
+  <label for="story">Quelle est l'histoire de cette planète</label>
+  <input type="text" class="form-control" id="story" name="story" [(ngModel)]="planet.story" #story="ngModel">
   <div [hidden]="story.valid"
        class="alert alert-danger">
     Noms invalides
