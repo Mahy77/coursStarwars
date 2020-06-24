@@ -12,8 +12,13 @@ export class SpaceshipsComponent implements OnInit {
   spaceships : Spaceship[]
   constructor(private spaceshipService: SpaceshipService) { }
 
+  isLoading: boolean;
   ngOnInit(): void {
-    this.spaceships = this.spaceshipService.getAllspaceships();
+    this.isLoading = true;
+    this.spaceshipService.getAllspaceships().subscribe((data: Spaceship[]) => {
+      this.spaceships = data;
+      this.isLoading = false;
+    })
   }
 
   spaceshipDelete(spaceship: Spaceship) {

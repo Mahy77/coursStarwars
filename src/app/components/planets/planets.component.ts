@@ -12,8 +12,13 @@ export class PlanetsComponent implements OnInit {
   planets: Planet[];
   constructor(private planetService: PlanetService) { }
 
+  isLoading: boolean;
   ngOnInit(): void {
-    this.planets = this.planetService.getAllPlanets();
+    this.isLoading = true;
+    this.planetService.getAllPlanets().subscribe((data: Planet[]) => {
+      this.planets = data;
+      this.isLoading = false;
+    })
   }
 
   planeteDelete(planet: Planet) {

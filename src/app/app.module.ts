@@ -17,6 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { FirstCharPipe } from './pipes/first-char.pipe';
 import { EditPlanetComponent } from './components/edit-planet/edit-planet.component';
 import { EditSpaceshipComponent } from './components/edit-spaceship/edit-spaceship.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,14 +32,15 @@ import { EditSpaceshipComponent } from './components/edit-spaceship/edit-spacesh
     AddPlanetComponent,
     FirstCharPipe,
     EditPlanetComponent,
-    EditSpaceshipComponent
+    EditSpaceshipComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
